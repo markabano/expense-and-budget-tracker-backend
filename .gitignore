@@ -1,0 +1,50 @@
+# Node dependencies
+node_modules/
+
+# Build / compiled output
+build/
+dist/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+logs/
+*.log
+
+# Database (if using SQLite or similar local file)
+*.sqlite
+*.sqlite3
+
+# Sequelize meta data (if using Sequelize CLI)
+.sequelize-meta
+.sequelize-meta.json
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor / IDE settings
+.vscode/
+.idea/
+
+# Temporary / cache
+*.tmp
+*.cache
+
+# Test coverage output
+coverage/
+
+# PM2 / runtime process files
+pids
+*.pid
+*.seed
+*.pid.lock
