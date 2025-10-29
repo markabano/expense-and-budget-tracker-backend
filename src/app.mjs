@@ -3,7 +3,8 @@ import path from "path";
 import cors from "cors";
 import dotenv from "dotenv";
 import sequelize from "./config/db.mjs";
-import { User, Expense, Category, Budget } from "./models/index.mjs";
+import { User, Expense, Category, Budget } from "./models/index.model.mjs";
+import routes from "./routes/index.routes.mjs";
 
 const app = express();
 dotenv.config();
@@ -13,14 +14,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.use("/api", routes);
+
 (async () => {
   try {
     await sequelize.authenticate();
     console.log("Connection has been established succesfully.");
 
-    await sequelize.sync().then(() => {
-      console.log("Database synced (development mode).");
-    });
+    // await sequelize.sync().then(() => {
+    //   console.log("Database synced (development mode).");
+    // });
     // await sequelize.sync({
     //     alter: true,
     // });
